@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
     if (priority) {
         filteredTodos = todos.filter(todo => todo.priority === priority);
     }
-    res.render('index', { todos: filteredTodos });
+    res.render('index', { todos: filteredTodos, query: req.query  });
 });
-
+ 
 // Add todo
 app.post('/add', (req, res) => {
     const { task, priority } = req.body;
